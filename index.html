@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUZEN TECHNOLOGIES &mdash; Learn. Build. Innovate.</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="STUZEN TECHNOLOGIES is a technology startup dedicated to engineering resilient software, cloud solutions, and forward-thinking digital products. Tagline: Learn. Build. Innovate.">
+  <meta name="keywords" content="STUZEN TECHNOLOGIES, Software Engineering, Cloud Architecture, AI Automation, Web Development, Tech Startup">
+  <meta property="og:title" content="STUZEN TECHNOLOGIES — Building Tomorrow's Technology, Today.">
+  <meta property="og:description" content="A technology-driven startup focused on learning, building, and creating meaningful digital solutions.">
+  <meta property="og:image" content="assets/logos/STUZEN_Logo_Transparent.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon using STUZEN Icon Asset -->
+  <link rel="icon" type="image/png" href="assets/logos/STUZEN_Icon_Only.png">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'electric-blue': '#008CFF',
+            'cyan-accent': '#00D4F5',
+            'deep-navy': '#020817',
+            'dark-blue': '#06152E',
+            'light-bg': '#F5F9FF',
+            'neutral-grey': '#64748B',
+          },
+          fontFamily: {
+            heading: ['"Exo 2"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F5F9FF] text-slate-800 antialiased selection:bg-[#00D4F5] selection:text-slate-900">
+
+  <!-- Top Announcement Bar / Brand Ribbon -->
+  <div class="ribbon-gradient-bar"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-header transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Link -->
+      <a href="#home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#00D4F5] rounded-md px-1 py-1">
+        <!-- Logo Image with strict aspect ratio and clear space -->
+        <img 
+          src="assets/logos/STUZEN_Logo_White.png" 
+          alt="STUZEN TECHNOLOGIES Logo" 
+          class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        >
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+        <a href="#home" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Home</a>
+        <a href="#about" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">About</a>
+        <a href="#services" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Services</a>
+        <a href="#solutions" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Solutions</a>
+        <a href="#workflow" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Approach</a>
+        <a href="#why-us" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Why Us</a>
+        <a href="#contact" class="desktop-nav-link text-sm font-medium text-slate-300 hover:text-[#00D4F5] transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Desktop Header CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="btn-primary text-xs uppercase tracking-wider py-2.5 px-5">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        id="mobileMenuBtn" 
+        type="button" 
+        class="md:hidden text-slate-300 hover:text-[#00D4F5] p-2 focus:outline-none focus:ring-2 focus:ring-[#00D4F5] rounded-lg"
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#020817]/95 border-b border-[#00D4F5]/20 backdrop-blur-xl px-6 pt-4 pb-8 space-y-4 shadow-2xl">
+      <div class="flex flex-col space-y-3 font-heading">
+        <a href="#home" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Home</a>
+        <a href="#about" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">About Us</a>
+        <a href="#services" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Services</a>
+        <a href="#solutions" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Solutions</a>
+        <a href="#workflow" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Approach</a>
+        <a href="#why-us" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Why Us</a>
+        <a href="#contact" class="mobile-nav-link text-slate-200 hover:text-[#00D4F5] py-2 text-base border-b border-slate-800">Contact Us</a>
+      </div>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-nav-link btn-primary w-full text-center text-sm">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         A. HOME / HERO SECTION
+         Deep Navy Background with Electric Blue and Cyan Geometric Motifs
+         ========================================================================== -->
+    <section id="home" class="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-[#020817] text-white overflow-hidden bg-tech-grid">
+      <!-- Ambient Lighting Blobs -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#008CFF]/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-32 w-[30rem] h-[30rem] bg-[#00D4F5]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text Content (7 Columns) -->
+          <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+            
+            <!-- Brand Tagline Badge -->
+            <div class="inline-flex items-center">
+              <span class="stuzen-tagline-badge">
+                <span class="w-2 h-2 rounded-full bg-[#00D4F5] animate-ping inline-block mr-1"></span>
+                STUZEN TECHNOLOGIES &bull; Learn. Build. Innovate.
+              </span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+              Building Tomorrow's <br class="hidden sm:inline">
+              <span class="text-gradient">Technology, Today.</span>
+            </h1>
+
+            <!-- Supporting Text -->
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              We are a technology-driven startup focused on learning, building, and creating meaningful digital solutions.
+            </p>
+
+            <!-- Action CTAs -->
+            <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <a href="#solutions" class="btn-primary text-base">
+                <span>Explore Our Work</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+              <a href="#contact" class="btn-secondary text-base">
+                <span>Contact Us</span>
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Value Metric Pills (Authentic, No False Claims) -->
+            <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+              <div>
+                <p class="text-xs uppercase tracking-wider text-slate-400 font-mono">Foundational</p>
+                <p class="text-lg font-bold text-white font-heading mt-0.5">Learn</p>
+                <p class="text-xs text-slate-400">Deep Technical Inquiry</p>
+              </div>
+              <div class="border-l border-slate-800 pl-4">
+                <p class="text-xs uppercase tracking-wider text-slate-400 font-mono">Execution</p>
+                <p class="text-lg font-bold text-[#008CFF] font-heading mt-0.5">Build</p>
+                <p class="text-xs text-slate-400">Resilient Engineering</p>
+              </div>
+              <div class="border-l border-slate-800 pl-4">
+                <p class="text-xs uppercase tracking-wider text-slate-400 font-mono">Evolution</p>
+                <p class="text-lg font-bold text-[#00D4F5] font-heading mt-0.5">Innovate</p>
+                <p class="text-xs text-slate-400">Scalable Impact</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual: Brand Ribbon S Emblem Showcase (5 Columns) -->
+          <div class="lg:col-span-5 flex justify-center items-center">
+            <div class="relative w-full max-w-md">
+              
+              <!-- Subtle Background Glow Halo -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#008CFF]/20 to-[#00D4F5]/30 rounded-3xl blur-2xl transform scale-95"></div>
+
+              <!-- Main Floating Emblem Card -->
+              <div class="glass-card-dark rounded-2xl p-8 relative z-10 floating-emblem border border-[#00D4F5]/25">
+                <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                  </div>
+                  <span class="text-xs font-mono text-[#00D4F5] bg-[#00D4F5]/10 px-2.5 py-0.5 rounded-full border border-[#00D4F5]/20">
+                    STUZEN Core v1.0
+                  </span>
+                </div>
+
+                <!-- Brand Symbol with High-Fidelity Rendering -->
+                <div class="py-10 flex flex-col items-center justify-center">
+                  <div class="relative group">
+                    <img 
+                      src="assets/logos/STUZEN_Icon_Only.png" 
+                      alt="STUZEN Ribbon S Symbol" 
+                      class="w-48 h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,140,255,0.4)] transition-transform duration-500 group-hover:scale-105"
+                    >
+                  </div>
+                  <h3 class="text-xl font-bold font-heading text-white mt-6 tracking-wider">STU<span class="text-[#00D4F5]">Z</span>EN</h3>
+                  <p class="text-xs text-slate-400 font-mono tracking-widest uppercase mt-1">TECHNOLOGIES</p>
+                </div>
+
+                <!-- Card Footer Status -->
+                <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                  <span class="flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-[#00D4F5]"></i>
+                    Engineered for Scalability
+                  </span>
+                  <span class="font-mono text-slate-500">2026.11</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         B. ABOUT US SECTION
+         Pristine Light Surface with High-Contrast Typography & Values
+         ========================================================================== -->
+    <section id="about" class="py-24 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#008CFF] uppercase">About STUZEN</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+            Rooted in Purpose, Built for Progress
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+            STUZEN TECHNOLOGIES is an emerging technology startup established on the principle that the most durable digital products come from a balance of deep learning, uncompromising craft, and constant innovation.
+          </p>
+        </div>
+
+        <!-- Vision & Mission Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          
+          <!-- Vision Card -->
+          <div class="bg-[#F5F9FF] border border-blue-100 rounded-2xl p-8 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-blue-100/80 flex items-center justify-center text-[#008CFF] mb-6">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 font-heading mb-3">Our Vision</h3>
+            <p class="text-slate-600 leading-relaxed">
+              To engineer intelligent, accessible, and resilient digital architectures that empower organizations and people to solve complex problems effortlessly. We envision a technology landscape where software is built with long-term intent, clarity, and reliability.
+            </p>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="bg-[#F5F9FF] border border-blue-100 rounded-2xl p-8 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-cyan-100/80 flex items-center justify-center text-[#008CFF] mb-6">
+              <i data-lucide="target" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 font-heading mb-3">Our Mission</h3>
+            <p class="text-slate-600 leading-relaxed">
+              To convert active technical inquiry and modern computational methodologies into functional, dependable digital systems. We bridge the gap between abstract research and concrete user-centered execution through rigorous development practices.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Core Values Section (4 Columns) -->
+        <div class="space-y-8">
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-slate-900 font-heading">Our Core Values</h3>
+            <p class="text-sm text-slate-500">The enduring tenets guiding how we design, write code, and collaborate.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#008CFF]/50 transition-colors">
+              <div class="text-[#008CFF] mb-4">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 font-heading mb-2">Continuous Learning</h4>
+              <p class="text-sm text-slate-600">Every challenge begins with curiosity. We investigate fundamental mechanisms rather than merely adopting transient trends.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#008CFF]/50 transition-colors">
+              <div class="text-[#008CFF] mb-4">
+                <i data-lucide="hammer" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 font-heading mb-2">Purposeful Craft</h4>
+              <p class="text-sm text-slate-600">We prioritize maintainability, clean architecture, and type safety over expedient, fragile shortcuts.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#008CFF]/50 transition-colors">
+              <div class="text-[#008CFF] mb-4">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 font-heading mb-2">Adaptive Innovation</h4>
+              <p class="text-sm text-slate-600">We incorporate modern tools—cloud microservices, automation, intelligent agents—where they generate genuine utility.</p>
+            </div>
+
+            <div class="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#008CFF]/50 transition-colors">
+              <div class="text-[#008CFF] mb-4">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-lg font-bold text-slate-900 font-heading mb-2">Honest Integrity</h4>
+              <p class="text-sm text-slate-600">No inflated vanity claims or buzzword marketing. We present verified capabilities and transparent timelines.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Clearly Labeled Verified Company Notice / Leadership Placeholder -->
+        <div class="mt-14 p-5 rounded-xl bg-slate-50 border border-dashed border-slate-300 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+          <div class="flex items-center gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-slate-400"></i>
+            <span>[Status Note: Corporate registrations and formal advisory profiles are in active setup for 2026]</span>
+          </div>
+          <span class="text-slate-400">STUZEN Documentation Desk</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         C. SERVICES / WHAT WE DO
+         Deep Navy Tech Section with Modern Service Cards
+         ========================================================================== -->
+    <section id="services" class="py-24 bg-[#020817] text-white bg-tech-grid relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#00D4F5] uppercase">Capabilities</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+            What We Do
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed pt-2">
+            Engineered capabilities designed to take digital ideas from whiteboard concepts into scalable, production-grade applications.
+          </p>
+          <p class="text-xs font-mono text-[#00D4F5]/70">[Emerging Service Offerings &bull; Tailored to Client Specifications]</p>
+        </div>
+
+        <!-- Services Grid (6 Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Service 1 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Custom Software Engineering</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Building scalable backend systems, high-concurrency microservices, and modular full-stack architectures engineered for high reliability and type safety.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>TypeScript &bull; Python &bull; Go &bull; REST/GraphQL</span>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="cloud" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Cloud Infrastructure & DevOps</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Designing reproducible infrastructure-as-code, automated CI/CD deployment pipelines, container orchestration, and serverless environments.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>Docker &bull; AWS / GCP &bull; CI/CD &bull; Terraform</span>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">AI & Applied Automation</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Practical integration of intelligent models, LLM tooling, workflow orchestration, and automated data pipelines that eliminate repetitive friction.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>LangChain &bull; Vector DBs &bull; Workflows &bull; FastAPIs</span>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Product Design & Systems</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Crafting cohesive design systems, user journey mappings, interactive prototypes, and accessible component libraries that establish instant brand identity.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>Figma &bull; Tailwind &bull; Design Tokens &bull; WCAG 2.1</span>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Modern Web Applications</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Building ultra-fast, responsive web applications with state management, seamless client-side routing, and real-time backend synchronization.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>React &bull; Next.js &bull; TypeScript &bull; WebSockets</span>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="glass-card-dark rounded-2xl p-7 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-[#008CFF]/15 border border-[#008CFF]/30 flex items-center justify-center text-[#00D4F5] mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Technical Architecture Advisory</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Comprehensive code reviews, architectural audits, scalability planning, and security evaluations to prevent technical debt before launching.
+            </p>
+            <div class="pt-4 border-t border-slate-800 flex items-center text-xs font-mono text-[#00D4F5]">
+              <span>System Design &bull; Performance &bull; Security Checks</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         D. OUR SOLUTIONS / PRODUCTS
+         Scalable Catalog with Interactive Category Filtering
+         ========================================================================== -->
+    <section id="solutions" class="py-24 bg-[#F5F9FF] border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#008CFF] uppercase">Portfolio & Projects</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+            Our Solutions & Products
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+            Selected product prototypes, open digital architectures, and research projects initiated by STUZEN TECHNOLOGIES.
+          </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12" role="tablist">
+          <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-all bg-[#008CFF] text-white shadow-md" data-category="all">
+            All Initiatives
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-[#008CFF]" data-category="enterprise">
+            Enterprise Platforms
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-[#008CFF]" data-category="devtools">
+            Developer Tools
+          </button>
+          <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-[#008CFF]" data-category="research">
+            EdTech & Research
+          </button>
+        </div>
+
+        <!-- Solution Cards Grid -->
+        <div id="solutionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="solution-card flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group" data-category="enterprise">
+            <div class="h-48 bg-gradient-to-tr from-[#020817] to-[#06152E] p-6 flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <img src="assets/logos/STUZEN_Icon_White.png" alt="Icon Watermark" class="w-32 h-32">
+              </div>
+              <div class="flex items-center justify-between z-10">
+                <span class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-[#008CFF]/20 text-[#00D4F5] border border-[#00D4F5]/30">
+                  Enterprise
+                </span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                  Active Prototype
+                </span>
+              </div>
+              <div class="z-10">
+                <h4 class="text-xl font-bold font-heading text-white">Stuzen Omnix Core</h4>
+                <p class="text-xs text-slate-300 mt-1">Multi-Tenant Workflow Orchestrator</p>
+              </div>
+            </div>
+            
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                An extensible asynchronous event broker and microservices orchestration engine built for handling high-volume organizational data workflows with end-to-end tracing.
+              </p>
+              
+              <div class="space-y-4">
+                <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">TypeScript</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">Node / Bun</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">Redis</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">PostgreSQL</span>
+                </div>
+                
+                <button 
+                  type="button"
+                  class="w-full text-center py-2 px-4 rounded-lg border border-slate-200 text-xs font-semibold text-slate-800 hover:bg-[#F0F7FF] hover:border-[#008CFF] hover:text-[#008CFF] transition-colors"
+                  data-modal-target="modalOmnix"
+                >
+                  View Architecture &bull; Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="solution-card flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group" data-category="devtools">
+            <div class="h-48 bg-gradient-to-tr from-[#06152E] to-[#0A2540] p-6 flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <img src="assets/logos/STUZEN_Icon_White.png" alt="Icon Watermark" class="w-32 h-32">
+              </div>
+              <div class="flex items-center justify-between z-10">
+                <span class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-[#00D4F5]/20 text-[#00D4F5] border border-[#00D4F5]/30">
+                  Developer Tools
+                </span>
+                <span class="text-xs font-mono text-cyan-300 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-cyan-300 inline-block"></span>
+                  Open Ecosystem
+                </span>
+              </div>
+              <div class="z-10">
+                <h4 class="text-xl font-bold font-heading text-white">Stuzen CLI & UI Tokens</h4>
+                <p class="text-xs text-slate-300 mt-1">Cross-Platform Design System Generator</p>
+              </div>
+            </div>
+            
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                A unified developer CLI tool for compiling design tokens into CSS variables, Tailwind configurations, and typed React components with zero configuration overhead.
+              </p>
+              
+              <div class="space-y-4">
+                <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">Rust / CLI</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">Tailwind</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">CSS Tokens</span>
+                </div>
+                
+                <button 
+                  type="button"
+                  class="w-full text-center py-2 px-4 rounded-lg border border-slate-200 text-xs font-semibold text-slate-800 hover:bg-[#F0F7FF] hover:border-[#008CFF] hover:text-[#008CFF] transition-colors"
+                  data-modal-target="modalCLI"
+                >
+                  View Architecture &bull; Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="solution-card flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all group" data-category="research">
+            <div class="h-48 bg-gradient-to-tr from-[#020817] to-[#082046] p-6 flex flex-col justify-between relative overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <img src="assets/logos/STUZEN_Icon_White.png" alt="Icon Watermark" class="w-32 h-32">
+              </div>
+              <div class="flex items-center justify-between z-10">
+                <span class="text-xs font-mono font-medium px-2.5 py-1 rounded bg-[#008CFF]/20 text-[#00D4F5] border border-[#00D4F5]/30">
+                  EdTech & Research
+                </span>
+                <span class="text-xs font-mono text-purple-300 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-purple-300 inline-block"></span>
+                  Incubating
+                </span>
+              </div>
+              <div class="z-10">
+                <h4 class="text-xl font-bold font-heading text-white">Stuzen LearnLab</h4>
+                <p class="text-xs text-slate-300 mt-1">Interactive Systems Architecture Explorer</p>
+              </div>
+            </div>
+            
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                An educational sandbox helping aspiring software engineers visualize distributed systems, memory management, and asynchronous protocols in real time.
+              </p>
+              
+              <div class="space-y-4">
+                <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">React</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">WebAssembly</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700">Canvas API</span>
+                </div>
+                
+                <button 
+                  type="button"
+                  class="w-full text-center py-2 px-4 rounded-lg border border-slate-200 text-xs font-semibold text-slate-800 hover:bg-[#F0F7FF] hover:border-[#008CFF] hover:text-[#008CFF] transition-colors"
+                  data-modal-target="modalLearnLab"
+                >
+                  View Architecture &bull; Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         E. OUR APPROACH / WORKFLOW
+         Connected Timeline: Discover -> Plan -> Build -> Innovate
+         ========================================================================== -->
+    <section id="workflow" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-20">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#008CFF] uppercase">Methodology</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+            Our Approach & Workflow
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+            A disciplined, four-stage lifecycle that transforms ambitious ideas into robust, verified software.
+          </p>
+        </div>
+
+        <!-- 4-Step Connected Horizontal Timeline -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          
+          <!-- Step 1 -->
+          <div class="timeline-step flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-[#008CFF]/10 border-2 border-[#008CFF] flex items-center justify-center text-[#008CFF] font-heading font-extrabold text-xl mb-6 relative z-10 bg-white group-hover:scale-110 group-hover:bg-[#008CFF] group-hover:text-white transition-all shadow-sm">
+              01
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Discover</h3>
+            <p class="text-xs font-mono text-[#008CFF] font-semibold uppercase mb-3">Understand the Problem</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              We deconstruct technical requirements, analyze data constraints, and map user expectations before writing a single line of production code.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-[#008CFF]/10 border-2 border-[#008CFF] flex items-center justify-center text-[#008CFF] font-heading font-extrabold text-xl mb-6 relative z-10 bg-white group-hover:scale-110 group-hover:bg-[#008CFF] group-hover:text-white transition-all shadow-sm">
+              02
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Plan</h3>
+            <p class="text-xs font-mono text-[#008CFF] font-semibold uppercase mb-3">Develop Practical Strategy</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Architecting schema designs, API contracts, deployment milestones, and UX flows with clean separation of concerns and clear milestones.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-[#008CFF]/10 border-2 border-[#008CFF] flex items-center justify-center text-[#008CFF] font-heading font-extrabold text-xl mb-6 relative z-10 bg-white group-hover:scale-110 group-hover:bg-[#008CFF] group-hover:text-white transition-all shadow-sm">
+              03
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Build</h3>
+            <p class="text-xs font-mono text-[#008CFF] font-semibold uppercase mb-3">Create the Solution</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Writing clean, modular, and type-checked code backed by continuous integration tests, performance audits, and responsive design checks.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-[#008CFF]/10 border-2 border-[#00D4F5] flex items-center justify-center text-[#008CFF] font-heading font-extrabold text-xl mb-6 relative z-10 bg-white group-hover:scale-110 group-hover:bg-[#00D4F5] group-hover:text-slate-900 transition-all shadow-sm">
+              04
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Innovate</h3>
+            <p class="text-xs font-mono text-[#00D4F5] font-semibold uppercase mb-3">Improve & Evolve</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Gathering real performance telemetry, benchmarking bottlenecks, and iterating swiftly to keep solutions resilient as scale grows.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         F. WHY CHOOSE US
+         Clean Differentiator Cards (Zero False Claims)
+         ========================================================================== -->
+    <section id="why-us" class="py-24 bg-[#06152E] text-white bg-tech-grid">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#00D4F5] uppercase">The Stuzen Advantage</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+            Why Choose STUZEN
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed pt-2">
+            We measure our success by the clarity, resilience, and longevity of the software we engineer.
+          </p>
+        </div>
+
+        <!-- Differentiators Grid (6 Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">Pragmatic Innovation</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              We leverage modern technology frameworks only when they solve genuine problems, avoiding needless complexity and fragile hype cycles.
+            </p>
+          </div>
+
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="wrench" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">Practical Problem-Solving</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Every design decision stems from real-world workflow requirements, creating solutions that reduce latency, friction, and operational overhead.
+            </p>
+          </div>
+
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">Uncompromising Quality</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Strict type safety, consistent linting rules, comprehensive unit tests, and modular architecture ensure long-term maintainability.
+            </p>
+          </div>
+
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">Continuous Learning</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              True to our motto, we continuously absorb evolving best practices in security, cloud infrastructure, and user accessibility.
+            </p>
+          </div>
+
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">User-Focused Development</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Engineered for humans: responsive down to 320px screens, intuitive interaction states, readable typography, and fast loading times.
+            </p>
+          </div>
+
+          <div class="glass-card-dark rounded-xl p-6">
+            <div class="text-[#00D4F5] mb-4">
+              <i data-lucide="git-branch" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-lg font-bold font-heading text-white mb-2">Adaptability & Agility</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              As an agile startup, we adapt quickly to feedback, adjusting architectures with minimal friction and transparent sprint reporting.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         G. CONTACT US SECTION
+         Interactive Contact Form with Live Validation & Error States
+         ========================================================================== -->
+    <section id="contact" class="py-24 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <p class="text-xs font-mono font-semibold tracking-widest text-[#008CFF] uppercase">Get in Touch</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading">
+            Connect With STUZEN
+          </h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-[#00D4F5] to-[#008CFF] mx-auto rounded-full"></div>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+            Have a project in mind, want to explore a technical collaboration, or discuss engineering solutions? Send us a message below.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Information & Company Details (5 Columns) -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="bg-[#F5F9FF] border border-blue-100 rounded-2xl p-8 space-y-6">
+              
+              <div>
+                <h3 class="text-xl font-bold font-heading text-slate-900 mb-2">Direct Communication</h3>
+                <p class="text-sm text-slate-600">
+                  Our engineering desk reviews every inquiry carefully. We target an initial technical response within 24 business hours.
+                </p>
+              </div>
+
+              <div class="space-y-4 pt-2 border-t border-blue-100">
+                <div class="flex items-start gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-[#008CFF] flex-shrink-0 mt-0.5">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase">Primary Email</p>
+                    <a href="mailto:contact@stuzen.tech" class="text-sm font-semibold text-slate-800 hover:text-[#008CFF] transition-colors">
+                      contact@stuzen.tech
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-[#008CFF] flex-shrink-0 mt-0.5">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase">Headquarters / Location</p>
+                    <p class="text-sm font-medium text-slate-700">
+                      [Bangalore Technology Corridor &bull; India / Distributed]
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-[#008CFF] flex-shrink-0 mt-0.5">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-mono text-slate-400 uppercase">Working Hours</p>
+                    <p class="text-sm font-medium text-slate-700">Mon &ndash; Fri &bull; 09:30 &ndash; 18:30 IST</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Brand Motto Showcase -->
+              <div class="p-4 rounded-xl bg-white border border-slate-200">
+                <p class="text-xs font-mono text-[#008CFF] uppercase font-semibold">Our Guarantee</p>
+                <p class="text-xs text-slate-600 mt-1">
+                  We will never spam you or share your email address. Every communication remains strictly confidential.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Social Links -->
+            <div class="p-6 bg-white border border-slate-200 rounded-2xl flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-700 font-heading">Follow Stuzen:</span>
+              <div class="flex items-center gap-3">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-100 text-slate-600 hover:bg-[#008CFF] hover:text-white transition-colors flex items-center justify-center" aria-label="GitHub">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-100 text-slate-600 hover:bg-[#008CFF] hover:text-white transition-colors flex items-center justify-center" aria-label="LinkedIn">
+                  <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-100 text-slate-600 hover:bg-[#008CFF] hover:text-white transition-colors flex items-center justify-center" aria-label="X / Twitter">
+                  <i data-lucide="twitter" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form (7 Columns) -->
+          <div class="lg:col-span-7">
+            <div class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm relative">
+              
+              <!-- Form Success Notification Alert -->
+              <div id="formSuccessAlert" class="hidden mb-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 transition-all">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <h5 class="text-sm font-bold font-heading">Message Successfully Dispatched!</h5>
+                    <p class="text-xs text-emerald-700 mt-1">
+                      Thank you for contacting STUZEN TECHNOLOGIES. A dispatch record has been generated with Reference ID: <strong id="confirmationTicket" class="font-mono">STZ-108291</strong>. Our engineering desk will review your message shortly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Interactive Form -->
+              <form id="stuzenContactForm" class="space-y-6" novalidate>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <!-- Name Field -->
+                  <div>
+                    <label for="senderName" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                      Your Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="senderName" 
+                      name="name" 
+                      placeholder="e.g. Alex Rivera" 
+                      class="form-input" 
+                      required
+                    >
+                    <p id="nameError" class="hidden text-xs text-red-500 mt-1"></p>
+                  </div>
+
+                  <!-- Email Field -->
+                  <div>
+                    <label for="senderEmail" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                      Email Address <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="senderEmail" 
+                      name="email" 
+                      placeholder="alex@example.com" 
+                      class="form-input" 
+                      required
+                    >
+                    <p id="emailError" class="hidden text-xs text-red-500 mt-1"></p>
+                  </div>
+                </div>
+
+                <!-- Subject Field -->
+                <div>
+                  <label for="senderSubject" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                    Subject / Topic <span class="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="senderSubject" 
+                    name="subject" 
+                    placeholder="e.g. Enterprise Solution Inquiry or Architecture Advisory" 
+                    class="form-input" 
+                    required
+                  >
+                  <p id="subjectError" class="hidden text-xs text-red-500 mt-1"></p>
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                  <label for="senderMessage" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                    Your Message <span class="text-red-500">*</span>
+                  </label>
+                  <textarea 
+                    id="senderMessage" 
+                    name="message" 
+                    rows="5" 
+                    placeholder="Briefly describe your requirements, project scope, or technical questions..." 
+                    class="form-input resize-y" 
+                    required
+                  ></textarea>
+                  <p id="messageError" class="hidden text-xs text-red-500 mt-1"></p>
+                </div>
+
+                <!-- Submission Status Note -->
+                <p class="text-xs text-slate-500 font-mono">
+                  [Note: Form handles client-side validation and can be connected directly to Formspree, Resend, or your custom API endpoint.]
+                </p>
+
+                <!-- Submit Button -->
+                <div>
+                  <button 
+                    type="submit" 
+                    id="contactSubmitBtn" 
+                    class="btn-primary w-full sm:w-auto text-sm uppercase tracking-wider py-3.5 px-8"
+                  >
+                    <span id="submitSpinner" class="hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span id="submitBtnText">Send Message</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       H. FOOTER SECTION
+       Deep Navy with STUZEN_Logo_White.png, Tagline, Modals & Links
+       ========================================================================== -->
+  <footer class="bg-[#020817] text-white border-t border-slate-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Column 1: Brand & Tagline (2 cols wide) -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="#home" class="inline-block">
+            <img 
+              src="assets/logos/STUZEN_Logo_White.png" 
+              alt="STUZEN TECHNOLOGIES Logo" 
+              class="h-10 w-auto object-contain"
+            >
+          </a>
+          <p class="text-xs font-mono text-[#00D4F5] uppercase tracking-widest font-semibold">
+            Learn. Build. Innovate.
+          </p>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            An emerging technology startup focused on learning, building, and creating meaningful digital solutions with engineering rigor.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#00D4F5] hover:border-[#00D4F5] transition-colors" aria-label="GitHub">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#00D4F5] hover:border-[#00D4F5] transition-colors" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-[#00D4F5] hover:border-[#00D4F5] transition-colors" aria-label="Twitter">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="space-y-3">
+          <h5 class="text-xs font-mono uppercase tracking-wider text-[#00D4F5] font-semibold">Navigation</h5>
+          <ul class="space-y-2 text-sm text-slate-400 font-heading">
+            <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="#solutions" class="hover:text-white transition-colors">Solutions</a></li>
+            <li><a href="#workflow" class="hover:text-white transition-colors">Approach</a></li>
+            <li><a href="#why-us" class="hover:text-white transition-colors">Why Choose Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Capabilities -->
+        <div class="space-y-3">
+          <h5 class="text-xs font-mono uppercase tracking-wider text-[#00D4F5] font-semibold">Capabilities</h5>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#services" class="hover:text-white transition-colors">Custom Software</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Cloud & DevOps</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Applied AI Tools</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Design Systems</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Web Applications</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Compliance -->
+        <div class="space-y-3">
+          <h5 class="text-xs font-mono uppercase tracking-wider text-[#00D4F5] font-semibold">Communication</h5>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="mailto:contact@stuzen.tech" class="hover:text-white transition-colors">contact@stuzen.tech</a></li>
+            <li><span class="text-slate-500">[Bangalore Hub / India]</span></li>
+            <li class="pt-2">
+              <button data-modal-target="modalPrivacy" class="hover:text-[#00D4F5] transition-colors text-left">Privacy Policy</button>
+            </li>
+            <li>
+              <button data-modal-target="modalTerms" class="hover:text-[#00D4F5] transition-colors text-left">Terms of Service</button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Copyright & Back to Top -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>&copy; 2026 STUZEN TECHNOLOGIES. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <span class="font-mono text-slate-400">Brand Motto: Learn &bull; Build &bull; Innovate</span>
+          <button id="backToTopBtn" type="button" class="text-slate-400 hover:text-[#00D4F5] flex items-center gap-1 transition-colors" aria-label="Back to Top">
+            <span>Back to Top</span>
+            <i data-lucide="chevron-up" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS: PRIVACY POLICY, TERMS & SOLUTION DETAILS
+       Accessible, keyboard friendly with Escape & backdrop dismiss
+       ========================================================================== -->
+  
+  <!-- Privacy Policy Modal -->
+  <div id="modalPrivacy" class="modal-container hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <h3 class="text-xl font-bold font-heading text-slate-900">Privacy Policy</h3>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="py-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <p><strong>Last Updated: November 2026</strong></p>
+        <p>At STUZEN TECHNOLOGIES ("STUZEN"), accessible from stuzen.tech, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by STUZEN and how we use it.</p>
+        <h4 class="font-bold text-slate-900">Information We Collect</h4>
+        <p>When you contact us via our website contact form, we collect the information you provide directly to us: your full name, email address, subject, and the contents of your message.</p>
+        <h4 class="font-bold text-slate-900">How We Use Your Information</h4>
+        <p>We use the collected information exclusively to respond to inquiries, provide requested technical evaluations, and maintain professional communications. We never sell, rent, or distribute personal data to third parties.</p>
+      </div>
+      <div class="pt-4 border-t border-slate-200 text-right">
+        <button data-modal-close class="btn-primary text-xs py-2 px-5">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div id="modalTerms" class="modal-container hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <h3 class="text-xl font-bold font-heading text-slate-900">Terms of Service</h3>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="py-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <p><strong>Effective Date: November 2026</strong></p>
+        <p>Welcome to STUZEN TECHNOLOGIES. By accessing or using this website, you agree to be bound by these Terms of Service.</p>
+        <h4 class="font-bold text-slate-900">Intellectual Property</h4>
+        <p>The STUZEN name, ribbon-style S logo, tagline "Learn. Build. Innovate.", and all website design assets are the exclusive intellectual property of STUZEN TECHNOLOGIES. Unauthorized recreation or distribution is prohibited.</p>
+        <h4 class="font-bold text-slate-900">Information Disclaimer</h4>
+        <p>Content provided on this website is for informational and technical demonstration purposes. Unverified metrics or prospective services do not constitute binding commercial representations.</p>
+      </div>
+      <div class="pt-4 border-t border-slate-200 text-right">
+        <button data-modal-close class="btn-primary text-xs py-2 px-5">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Omnix Modal -->
+  <div id="modalOmnix" class="modal-container hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-xs font-mono text-[#008CFF] font-semibold uppercase">Architecture Specification</span>
+          <h3 class="text-2xl font-bold font-heading text-slate-900">Stuzen Omnix Core</h3>
+        </div>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="py-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <p><strong>Purpose:</strong> A multi-tenant event orchestrator engineered for handling high-throughput asynchronous job dispatching with guaranteed idempotency and low overhead.</p>
+        <h4 class="font-bold text-slate-900">Architectural Highlights:</h4>
+        <ul class="list-disc list-inside space-y-1.5">
+          <li><strong>Event Sourcing:</strong> Append-only event store guaranteeing complete auditability.</li>
+          <li><strong>Worker Scalability:</strong> Dynamic worker node spinning via containerized clusters.</li>
+          <li><strong>Observability:</strong> OpenTelemetry integration providing sub-millisecond trace visibility.</li>
+        </ul>
+        <div class="p-3 bg-slate-100 rounded-lg font-mono text-xs text-slate-800">
+          Stack: TypeScript &bull; Node.js &bull; Redis Pub/Sub &bull; PostgreSQL &bull; Docker
+        </div>
+      </div>
+      <div class="pt-4 border-t border-slate-200 flex justify-end gap-3">
+        <a href="#contact" data-modal-close class="btn-primary text-xs py-2 px-5">Inquire About Omnix</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project CLI Modal -->
+  <div id="modalCLI" class="modal-container hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-xs font-mono text-[#008CFF] font-semibold uppercase">Developer Utility</span>
+          <h3 class="text-2xl font-bold font-heading text-slate-900">Stuzen CLI & Tokens</h3>
+        </div>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="py-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <p><strong>Purpose:</strong> An open developer workflow utility automating brand token transforms from design tools directly into production CSS, Sass, and typed Tailwind theme structures.</p>
+        <h4 class="font-bold text-slate-900">Key Features:</h4>
+        <ul class="list-disc list-inside space-y-1.5">
+          <li>Extracts color scales and typography rules into typed schema definitions.</li>
+          <li>Generates zero-runtime CSS custom properties.</li>
+          <li>Validates WCAG 2.1 contrast ratios automatically during compile time.</li>
+        </ul>
+      </div>
+      <div class="pt-4 border-t border-slate-200 text-right">
+        <button data-modal-close class="btn-primary text-xs py-2 px-5">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project LearnLab Modal -->
+  <div id="modalLearnLab" class="modal-container hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl max-h-[85vh] overflow-y-auto relative">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-xs font-mono text-[#008CFF] font-semibold uppercase">Incubation Lab</span>
+          <h3 class="text-2xl font-bold font-heading text-slate-900">Stuzen LearnLab</h3>
+        </div>
+        <button data-modal-close class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="py-4 space-y-4 text-sm text-slate-600 leading-relaxed">
+        <p><strong>Purpose:</strong> An educational platform manifesting STUZEN's core value of continuous learning. Designed to allow developers to interactively probe distributed algorithms and memory layouts.</p>
+        <h4 class="font-bold text-slate-900">Module Topics:</h4>
+        <ul class="list-disc list-inside space-y-1.5">
+          <li>Interactive Consensus Protocols (Raft, Paxos visualization).</li>
+          <li>Memory layout & pointer safety diagnostics.</li>
+          <li>Network topologies and congestion control simulations.</li>
+        </ul>
+      </div>
+      <div class="pt-4 border-t border-slate-200 text-right">
+        <button data-modal-close class="btn-primary text-xs py-2 px-5">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
